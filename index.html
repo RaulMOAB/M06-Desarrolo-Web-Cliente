@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/bd26f4ad58.js" crossorigin="anonymous"></script>
+    <script src="js/main.js" defer></script>
+    <script src="./js/login.js" defer></script>
+    <script src="./js/validations.js" defer></script>
+    <script src="./js/flight.js" defer></script>
+    <script src="./js/passanger_dates.js" defer></script>
+    
+    <title>GreenFly</title>
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-light bg-light" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">GreenFly
+                <img src="./img/hoja.png" alt="logo" id="logo">
+            </a>
+            <button type="button" class="btn btn-light" id="logout">Log Out</button>
+        </div>
+    </nav>
+    <div class="login-container" id="login-register">
+        <div class="img-container" id="date-container">
+            <div class="date">
+                <div class="dateLeft">
+                    <div id="dateNumber"></div>
+                    <div>
+                        <div id="dateMonth"></div>
+                        <div id="dateYear"></div>
+                    </div>
+                </div>
+                <div class="dateRight">
+                    <div id="dateTime"></div>
+                    <div id="dayText"></div>
+                </div>
+            </div>
+        </div>
+        <div class="login-box" id="login-box">
+            <h2 id="loginText">Inicia sesión</h2>
+            <form id="login-form">
+                <div class="userInput">
+                    <label for="user" class="userName" id="labelUserName">Nombre de usuario</label>
+                    <input type="text" name="inpuName" id="loginName" value="Raul">
+                </div>
+
+                <div class="userInput">
+                    <div class="inputs"></div>
+                    <label for="password" class="userPass" id="LabelUserPass">Contraseña</label>
+                    <input type="password" name="password" id="loginPass" value="1234">
+                    <br>
+                    <span class="err_login hidden" id="errorMessage">El usuario o la contraseña no son correctos</span>
+                    <span id="notAcnt">¿No tienes cuenta todavía? <span id="registro">Regístrate</span></span>
+                </div>
+            </form>
+            <div class="login-btn">
+                <button type="button" id="login">Entrar</button>
+            </div>
+        </div>
+        <div class="login-box" id="singup-box">
+            <h2 id="loginText">Registro</h2>
+            <form id="singup-form">
+                <div class="userInput">
+                    <label for="user" class="userName" id="labelUserName">Nombre completo</label>
+                    <input type="text" name="inpuName" id="newUserName">
+                    <span class="errName hidden">Formato incorrecto</span>
+                    <label for="user" class="userName" id="labelUserName">Nombre de usuario</label>
+                    <input type="text" name="inpuName" id="inputName">
+                    <span class="errUseName hidden">Formato incorrecto</span>
+                    <label for="password" class="userPass" id="LabelUserPass">Contraseña</label>
+                    <input type="password" name="password" id="inputPass">
+                    <span class="errPass hidden">Mínimo 8 carácteres</span>
+                    <!-- <span class="err_pass hidden">Contraseña inválida</span> -->
+                    <label for="password" class="userPass" id="LabelUserPass">Repite contraseña</label>
+                    <input type="password" name="password" id="repeatPass">
+                    <span class="errRepeat hidden ">Las contraseñas no coinciden</span>
+                </div>
+                <div class="userInput">           
+                    <span id="alreadyAcnt">¿Ya estas Registado? <span id="singup">Entra aquí</span></span>
+                </div>
+            </form>
+            <div class="login-btn">
+                <button type="button" id="register">Enviar</button>
+            </div>
+        </div>
+
+        <div id="book-box">
+            <div id="book-box">
+                <h2 class="book-title">Reserva tu vuelo</h2>
+                <form class="book-form" id="book-form">
+                    <div class="origin-destination-container">
+                        <label for="input-origin">De</label>
+                        <select name="origin" id="airports0" required>
+                            <option value="0"></option>
+                        </select>
+                        <label for="input-origin">A</label>
+                        <select name="destination" id="airports" required>
+                            <option value="0"> </option>
+                        </select>
+                    </div>
+                    <p id="errMsg"></p>
+                    <div class="flight-dates">
+                        <label for="text">Ida</label>
+                        <input type="date" name="ida" id="ida-date" required>
+                        <label for="vuelta">Vuelta</label>
+                        <input type="date" name="vuelta" id="vuelta-date" required>
+                    </div>
+                    <div class="passangers">
+                        <p>Pasajeros</p>
+                        <input type="number" class="form-control" name="passanger" id="passanger" min="1" max="3"
+                            required>
+                    </div>
+                    <div class="message">
+                        <p class="text" id="text-msg"></p>
+                    </div>
+                </form>
+                <div class="search-btn">
+                    <button type="button" class="dissable" id="search">Buscar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- tabla de vuelos -->
+        <div class="flight-table" id="box-table">
+
+            <div class="flith-table-container" id="table container">
+                <h2 id="trip"></h2>
+                <p>Selecciona tu vuelo de ida y el vuelo de vuelta</p>
+                <!--tabla de ida-->
+                <table class="table table-dark table-striped table table-hover" id="table">
+                    <tr>
+                        <th colspan="2">Vuelo de ida</th>
+                        <th id="dep-day"></th>                     
+                    </tr>
+                    <tr class="table-head">
+                        <th>Salida</th>
+                        <th>Llegada</th>
+                        <th>Precio</th>
+                    </tr>
+                </table>
+                <!--tabla de vuelta-->
+                <table class="table table-dark table-striped table table-hover" id="tabla-vuelta">
+                    <tbody id="vuelta">
+                        <tr>
+                            <th colspan="2">Vuelo de vuelta</th>
+                            <th id="arr-day"></th>                        
+                        </tr>
+                        <tr>
+                            <th>Salida</th>
+                            <th>Llegada</th>
+                            <th>Precio</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div id="boarding-container">
+           
+        </div>
+    </div>
+    <div class="cookies-container" id="cookier-container">
+        <h3 class="cookies-title">Cookies</h3>
+        <p class="cookies-text">Esta página utiliza cookies que se eliminarán al cerrar la ventana</p>
+        <button type="button" class="button" id="agree-btn">De acuerdo</button>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --dark-green: #2c6975;
+    --medium-green: #68b2a0;
+    --light-green: #cde0c9;
+    --lighter-green: #e0ecde;
+    --white: #ffffff;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eaf4f4;
+    scroll-behavior: smooth;
+}
+.login-container{
+   display: flex;  
+   justify-content: center;
+   margin: auto;
+   margin-top: 5rem;
+   height: 600px;
+}
+
+#logo{
+    display: inline-flex;
+    height: 25px;
+    width: 25px;
+}
+
+.date{
+    background-image: url(../img/Departing.gif);/*quitar un punto al salir del apache*/
+    height: 537px;
+    width: 500px;
+}
+
+.login-box, #singup-box{
+    width: 500px;
+    height: 537px;
+    max-width: 600px;
+    padding: 2rem;   
+    background-color: var(--dark-green);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#loginText{
+    font-size: 1.5rem;
+    position: relative;
+    top: -0.5rem;
+    color: var(--lighter-green);
+    
+}
+.login-box > h2{
+   font-size: 1rem;
+   text-align: center;
+   margin: 0.5rem;
+   text-transform: capitalize;
+}
+#login-form{
+    margin-top: -0.5rem;
+}
+#login-form div,  #singup-box div{
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem auto;
+}
+
+#login-form label{
+    margin: 0.5rem 0;
+
+   
+}
+#singup-form{
+    padding-bottom: 15px;
+}
+
+.userInput > input{
+    border: none;
+    height: 2.5rem;
+    font-size: 1rem;
+    padding-left: 15px;
+    border-radius: 5px;
+}
+
+.userInput > label{
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 7px 0;
+    color: var(--light-green);
+}
+input:focus{
+   outline: none;
+}
+
+
+.hidden{
+   opacity: 0;
+}
+
+.roleText{
+    display: flex;
+    position: relative;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    justify-content: center;
+    color: var(--lighter-green);
+}
+.role-container{
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   font-size: 1.2rem;
+   margin: 1rem auto;
+}
+.login-btn{
+    position: relative;
+    top: 2rem;
+    display: flex;  
+}
+
+.login-btn > button{
+    position: relative;
+    font-size: 1.5rem;
+    margin: 0px auto;
+    padding: 8px 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--light-green);
+    color: var(--dark-green);
+    cursor: pointer;
+    transition: .3s ease all;
+}
+#singup-form{
+    top: -3rem;
+}
+button:hover{
+    transform: scale(1.1);
+    
+}
+#alreadyAcnt{
+    margin-top: -1rem;
+    text-align: center;
+}
+span{
+    text-align: start;
+    font-weight: 500;
+    color: var(--light-green);   
+}
+span:not(#alreadyAcnt, #notAcnt, #errorMessage){
+    font-weight: 500;
+    color:var(--white);
+}
+#register{
+    margin-top: -1rem;
+}
+#errorMessage{
+    background-color: crimson;
+    color: #ffffff;
+    margin-top: -1.2rem;
+    padding-bottom: 1rem;
+    font-weight: 700;
+}
+.errName, .errUseName, .errPass, .errRepeat{
+    background-color: crimson;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+}
+#registro, #singup{
+    cursor: pointer;
+}
+
+/*FECHA*/
+.date{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.dateLeft{
+    display: flex;
+    align-items: center;
+}
+.dateRight{
+    display: flex;
+    flex-direction: column;
+}
+.dateRight > #dateTime{
+    padding-top: 15px;
+    padding-right: 15px;
+}
+#dateNumber{
+    font-size: 5rem;
+    padding-left: 15px;
+}
+#dayText{
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding-right: 15px;
+   
+}
+#dateMonth,
+#dateNumber,
+#dayText{
+    font-weight: bold;
+}
+
+#dateMonth,
+#dateYear{
+    margin-left: 7px;
+    font-size: 1rem;
+}
+
+/*COOKIES*/
+.cookies-container{
+    display: block;
+    background-color: var(--white);
+    padding: 20px;
+    width: calc(100% - 40px);
+    max-width: 300px;
+    line-height: 150%;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 100;
+    box-shadow: 0px 2px 20px 10px rgba(222,222,222,.25);
+    text-align: center;
+}
+.cookies-container .cookies-title,
+.cookies-container .cookies-text{
+    margin-bottom: 15px;
+}
+.cookies-container .button{
+    width: 100%;
+    background-color: #595959;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s ease all;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+.cookies-container .button:hover{
+    background-color: var(--dark-green);
+}
+.output{
+    text-align: center;
+    margin-top: 15px;
+}
+#logout, #book_flight, #print{
+    background-color: var(--dark-green);
+    color: #cde0c9;
+}
+
+/*RESERVA VUELOS*/
+#book-box{   
+    width: 500px;
+    height: 537px;
+    max-width: 600px;
+    background-color: var(--dark-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.book-title{
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: var(--light-green);
+}
+/* .book-form{
+  margin: 1rem auto;
+ 
+} */
+.origin-destination-container, .flight-dates{
+    display: flex;
+    padding: auto 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 460px;
+    font-size: 1rem;
+} 
+.origin-destination-container {
+    padding-right: 20px ;
+} 
+.origin-destination-container > label{
+    padding: 10px;
+    color: #cde0c9;
+    font-weight: 600;
+} 
+.origin-destination-container > select{
+    width: 45%;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    
+}
+ 
+.flight-dates > input{
+    width: 45%;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    text-align: center;
+    border: none;
+    
+}
+.flight-dates > label{
+    color: #cde0c9;
+    font-weight: 600;
+    padding: 10px;
+}
+#search{
+    position: relative; 
+    top: -3rem;  
+    font-size: 1.5rem;
+    margin: 0px auto;
+    padding: 8px 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--light-green);
+    color: var(--dark-green);
+    cursor: pointer;
+    transition: .3s ease all;
+}
+.passangers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: fit-content;
+}
+.passangers > p{
+    padding:  1rem;
+    font-size: 1rem;
+    margin: auto;
+    color: #cde0c9;
+    font-weight: 600;
+}
+#passanger{
+    display: flex;
+    background-color: white;
+    border: 1px solid grey;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.passanger:hover{
+    background-color: grey;
+    color: #ffffff;
+}
+
+
+#search:disabled, .passanger-btn:disabled{
+    background-color: rgb(158, 156, 156);
+    color: #cde0c9;
+}
+
+#errMsg{
+    text-align: center;
+    background-color: crimson;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+    top: -1rem;
+}
+/*TABLE*/
+table{
+    margin-bottom: 3rem !important;
+}
+#table-container{
+    display: grid;
+    padding: 3rem 1rem;
+}
+#table, #tabla-vuelta{
+    text-align: center;
+}
+
+td{
+vertical-align: middle;
+}
+
+.buy{
+    padding: 10px;
+    border-radius: 25px;
+    width: 100px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.active{
+    background-color: #2c6975;
+    color: #cde0c9;
+}
+
+/*PASSANGERS DATES*/    
+.passanger-container, #boarding-container{
+    margin-right: 1rem;
+    height: 537px;
+    width: 600px;
+    background-color: #2c6975;
+    padding-left: 10px;
+}
+.passanger-header > h2{
+    text-align: center;
+    margin-top: 20px;
+    color: #cde0c9;
+}
+form{
+    margin: auto !important;
+}
+form > div > label{
+    color: #cde0c9;
+    font-weight: 500;
+}
+form > div > div > label{
+    color: #cde0c9;
+    font-weight: 500;
+}
+#group-btns{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.passanger-btn{
+    margin: auto;
+    /* position: relative;
+    top: -10px; */
+    width: 150px;
+    font-size: 1.5rem;
+    border-radius: 5px;  
+    border: none;
+    border-radius: 5px;
+    background-color: var(--light-green);
+    color: var(--dark-green);
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+/*Inputs validations*/
+
+.error{
+    border-color:  crimson !important;
+}
+.succes{
+    border-color: #9cfc89 !important;
+}
